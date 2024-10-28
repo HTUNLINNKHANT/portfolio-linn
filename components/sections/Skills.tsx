@@ -40,7 +40,7 @@ const skills = {
     icon: '/icons/tools.svg',
     items: [
       { name: 'Git', icon: '/icons/git.svg', color: '#F05032' },
-      { name: 'VS Code', icon: '/icons/vscode.svg', color: '#007ACC' },
+      { name: 'Gitlab', icon: '/icons/gitlab.svg', color: '#F05032' },
       { name: 'Docker', icon: '/icons/docker.svg', color: '#2496ED' },
       { name: 'Postman', icon: '/icons/postman.svg', color: '#FF6C37' },
     ],
