@@ -27,21 +27,21 @@ export default function Contact() {
               <div className="flex items-center space-x-4">
                 <Mail className="h-5 w-5" />
                 <a href="mailto:contact@example.com" className="hover:text-primary">
-                  contact@example.com
+                  htunlynnkhant@gamil.com
                 </a>
               </div>
               <div className="flex items-center space-x-4">
                 <Github className="h-5 w-5" />
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                <a href="https://github.com/HtunLynnKhant" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
                   GitHub Profile
                 </a>
               </div>
-              <div className="flex items-center space-x-4">
+{/*               <div className="flex items-center space-x-4">
                 <Linkedin className="h-5 w-5" />
                 <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
                   LinkedIn Profile
                 </a>
-              </div>
+              </div> */}
             </CardContent>
           </Card>
 
