@@ -18,7 +18,7 @@ export default function Contact() {
       >
         <h2 className="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mx-auto max-w-lg">
           <Card>
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
