@@ -46,27 +46,7 @@ export default function Contact() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Send a Message</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-4">
-                <div>
-                  <Input placeholder="Your Name" />
-                </div>
-                <div>
-                  <Input type="email" placeholder="Your Email" />
-                </div>
-                <div>
-                  <Textarea placeholder="Your Message" className="min-h-[100px]" />
-                </div>
-                <Button type="submit" className="w-full">
-                  Send Message
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+          
         </div>
       </motion.div>
     </section>
