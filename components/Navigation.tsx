@@ -7,11 +7,23 @@ import { Menu, X } from 'lucide-react';
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('About'); // Track active section
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      // Update active section based on scroll position
+      const sections = navItems.map(item => document.querySelector(item.href));
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      sections.forEach((section, index) => {
+        if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+          setActiveSection(navItems[index].name);
+        }
+      });
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -41,7 +53,11 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-500 transition-colors" // Change hover color here
+                  className={cn(
+                    "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                    activeSection === item.name ? "text-blue-500" : "text-gray-700 hover:text-blue-500"
+                  )}
+                  onClick={() => setActiveSection(item.name)} // Update active section on click
                 >
                   {item.name}
                 </a>
@@ -67,8 +83,14 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 transition-colors" // Change hover color here
-                onClick={() => setIsMobileMenuOpen(false)}
+                className={cn(
+                  "block px-3 py-2 rounded-md text-base font-medium transition-colors",
+                  activeSection === item.name ? "text-blue-500" : "text-gray-700 hover:text-blue-500"
+                )}
+                onClick={() => {
+                  setActiveSection(item.name);
+                  setIsMobileMenuOpen(false);
+                }}
               >
                 {item.name}
               </a>
