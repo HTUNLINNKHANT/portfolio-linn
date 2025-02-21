@@ -41,7 +41,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="px-3 py-2 rounded-md text-sm font-medium hover:text-primary transition-colors"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-500 transition-colors" // Change hover color here
                 >
                   {item.name}
                 </a>
@@ -67,7 +67,7 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 rounded-md text-base font-medium hover:text-primary transition-colors"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 transition-colors" // Change hover color here
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
