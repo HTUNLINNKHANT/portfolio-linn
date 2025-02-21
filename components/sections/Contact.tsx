@@ -37,12 +37,14 @@ export default function Contact() {
                   GitHub Profile
                 </a>
               </div>
-{/*               <div className="flex items-center space-x-4">
-                <Linkedin className="h-5 w-5" />
-                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+              <div className="flex items-center space-x-4">
+                <svg height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zm-11 20H7v-8h2v8zm-1-9.2c-.65 0-1.2-.55-1.2-1.2s.55-1.2 1.2-1.2 1.2.55 1.2 1.2-.55 1.2-1.2 1.2zm12 9.2h-2v-4.6c0-1.1-.02-2.5-1.5-2.5-1.5 0-1.7 1.2-1.7 2.4v4.7h-2v-8h2v1.1c.3-.6 1.1-1.1 2.3-1.1 2.5 0 2.9 1.6 2.9 3.6v4.4z" fill="#0077B5"/>
+              </svg>
+                <a href="https://linkedin.com/in/htun-linn-khant-60a308243/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
                   LinkedIn Profile
                 </a>
-              </div> */}
+              </div>
             </CardContent>
           </Card>
 
