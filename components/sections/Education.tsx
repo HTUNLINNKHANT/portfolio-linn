@@ -6,8 +6,14 @@ import { Badge } from "@/components/ui/badge";
 
 const education = [
   {
-    degree: "Bachelor Degree of Computer Science",
-    institution: "Info Myanmar University & Edinburgh Napier University",
+    degree: "Master's Degree in Information Technology",
+    institution: "INTI International University",
+    period: "2025 - present",
+    description: "Advanced studies in IT focusing on practical applications, including software development, data analytics, and cybersecurity, with hands-on project experience."
+  },
+  {
+    degree: "Bachelor's Degree in Computer Science",
+    institution: "Edinburgh Napier University",
     period: "2020 - 2021",
     description: "Collaborative program between Info Myanmar University and Edinburgh Napier University"
   },
@@ -15,7 +21,7 @@ const education = [
     degree: "Pearson BTEC Level 5 Higher National Diploma in Computing",
     institution: "Info Myanmar University & Edinburgh Napier University",
     period: "2019 - 2020",
-    description: "Advanced computing studies with focus on practical applications"
+    description: "Advanced computing studies with a focus on practical applications"
   }
 ];
 
