@@ -45,6 +45,14 @@ export default function Contact() {
                   LinkedIn Profile
                 </a>
               </div>
+              <div className="flex items-center space-x-4">
+                  <svg height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 2.21.63 4.27 1.73 6.03L0 24l5.97-1.73C7.73 22.37 9.69 23 12 23c6.63 0 12-5.37 12-12S18.63 0 12 0zm6.3 17.3c-.3.3-.7.3-1 0l-1.5-1.5c-.3-.3-.3-.7 0-1l1.5-1.5c.3-.3.7-.3 1 0l1.5 1.5c.3.3.3.7 0 1l-1.5 1.5zm-3.6-3.6c-.3.3-.7.3-1 0l-1.5-1.5c-.3-.3-.3-.7 0-1l1.5-1.5c.3-.3.7-.3 1 0l1.5 1.5c.3.3.3.7 0 1l-1.5 1.5zm-3.6-3.6c-.3.3-.7.3-1 0l-1.5-1.5c-.3-.3-.3-.7 0-1l1.5-1.5c.3-.3.7-.3 1 0l1.5 1.5c.3.3.3.7 0 1l-1.5 1.5z" fill="#25D366"/>
+                  </svg>
+                  <a href="https://wa.me/142995207" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                      WhatsApp Profile
+                  </a>
+              </div>
             </CardContent>
           </Card>
 
