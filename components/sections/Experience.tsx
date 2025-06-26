@@ -8,7 +8,7 @@ const experiences = [
   {
     title: "Back-end Developer",
     company: "Startrick Sdn Bhd",
-    period: "2024 - Present",
+    period: "2024 - 2025",
     description: "Developing and maintaining back-end systems and APIs",
   },
   {
