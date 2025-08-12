@@ -172,7 +172,18 @@ export default function About() {
                     </h3>
                     <div className="space-y-3 text-muted-foreground leading-relaxed text-sm">
                       <p>
-                        I am a results-driven Full-Stack Developer with over three years of experience designing, building, and optimizing web applications, APIs, and backend systems. Skilled in PHP, Python, Node.js, Laravel, Django, and modern frontend technologies, I specialize in creating scalable, secure, and high-performance solutions. My work has reduced API response times by up to 35%, scaled platforms to handle 50,000+ daily requests, and streamlined deployments with Docker and CI/CD pipelines. I thrive in collaborative, fast-paced environments where problem-solving, clean code, and business impact go hand in hand.
+                        I am a results-driven Full-Stack Developer with over
+                        three years of experience designing, building, and
+                        optimizing web applications, APIs, and backend systems.
+                        Skilled in PHP, Python, Node.js, Laravel, Django, and
+                        modern frontend technologies, I specialize in creating
+                        scalable, secure, and high-performance solutions. My
+                        work has reduced API response times by up to 35%, scaled
+                        platforms to handle 50,000+ daily requests, and
+                        streamlined deployments with Docker and CI/CD pipelines.
+                        I thrive in collaborative, fast-paced environments where
+                        problem-solving, clean code, and business impact go hand
+                        in hand.
                       </p>
                     </div>
                   </div>
