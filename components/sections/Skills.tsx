@@ -28,7 +28,6 @@ const skillCategories = [
       { name: 'Laravel/PHP', level: 92, icon: '/icons/laravel.svg', color: '#FF2D20' },
       { name: 'Django/Python', level: 88, icon: '/icons/python.svg', color: '#3776AB' },
       { name: 'Node.js', level: 85, icon: '/icons/nodejs.svg', color: '#339933' },
-      { name: 'PHP', level: 90, icon: '/icons/php.svg', color: '#777BB4' },
     ]
   },
   {
@@ -50,7 +49,6 @@ const skillCategories = [
       { name: 'Git', level: 90, icon: '/icons/git.svg', color: '#F05032' },
       { name: 'GitLab', level: 88, icon: '/icons/gitlab.svg', color: '#FC6D26' },
       { name: 'Postman', level: 88, icon: '/icons/postman.svg', color: '#FF6C37' },
-      { name: 'Next.js', level: 85, icon: '/icons/nextjs.svg', color: '#000000' },
     ]
   }
 ];
@@ -198,7 +196,7 @@ export default function Skills() {
               <div className="flex flex-wrap gap-2 justify-center">
                 {[
                   'Spatie', 'JWT Authentication', 'Payment Gateways', 'WebSockets', 'Redis', 
-                  'Nginx', 'Apache', 'AWS', 'Digital Ocean', 'Cloudflare', 'Figma', 'Adobe XD'
+                  'Nginx', 'Apache', 'AWS', 'Digital Ocean', 'Cloudflare', 'Figma'
                 ].map((tech, index) => (
                   <motion.div
                     key={tech}
