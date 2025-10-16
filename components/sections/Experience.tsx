@@ -6,26 +6,26 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, TrendingUp, CheckCircle } from "lucide-react";
 
 const experiences = [
-  {
-    title: "Remote Full-Stack Developer",
-    company: "Myanmar Online Entrepreneur (MOE)",
-    location: "Remote",
-    period: "Jul 2025 – Present",
-    type: "Current",
-    achievements: [
-      "Designing and developing scalable web platforms for e-commerce and digital services using Laravel, React, and Node.js",
-      "Integrating secure payment gateways and RESTful APIs to enhance transaction reliability",
-      "Collaborating remotely with cross-functional teams to deliver new features and system improvements on schedule",
-    ],
-    technologies: [
-      "Laravel",
-      "React",
-      "Node.js",
-      "RESTful APIs",
-      "Payment Gateways",
-    ],
-    color: "bg-green-500/10 text-green-600 dark:text-green-400",
-  },
+  // {
+  //   title: "Remote Full-Stack Developer",
+  //   company: "Myanmar Online Entrepreneur (MOE)",
+  //   location: "Remote",
+  //   period: "Jul 2025 – Present",
+  //   type: "Current",
+  //   achievements: [
+  //     "Designing and developing scalable web platforms for e-commerce and digital services using Laravel, React, and Node.js",
+  //     "Integrating secure payment gateways and RESTful APIs to enhance transaction reliability",
+  //     "Collaborating remotely with cross-functional teams to deliver new features and system improvements on schedule",
+  //   ],
+  //   technologies: [
+  //     "Laravel",
+  //     "React",
+  //     "Node.js",
+  //     "RESTful APIs",
+  //     "Payment Gateways",
+  //   ],
+  //   color: "bg-green-500/10 text-green-600 dark:text-green-400",
+  // },
   {
     title: "Remote Backend Developer",
     company: "Startrick Sdn Bhd",
