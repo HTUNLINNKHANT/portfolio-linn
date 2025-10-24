@@ -43,8 +43,8 @@ const contactMethods = [
       </svg>
     ),
     label: "GitHub",
-    value: "HtunLynnKhant",
-    href: "https://github.com/HtunLynnKhant",
+    value: "HtunLinnKhant",
+    href: "https://github.com/HTUNLINNKHANT",
     description: "Check out my projects",
     color: "bg-gray-500/10 text-gray-600 dark:text-gray-400",
     copyable: false,
