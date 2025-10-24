@@ -1,29 +1,33 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter, Poppins } from 'next/font/google';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter, Poppins } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
-const poppins = Poppins({ 
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-poppins',
-  display: 'swap',
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: 'Htun Linn Khant - Full Stack Developer',
-  description: 'Portfolio of Htun Linn Khant, a Full Stack Developer specializing in web development.',
+  title: "Htun Linn Khant - Full Stack Developer",
+  description:
+    "Portfolio of Htun Linn Khant, a Full Stack Developer specializing in web development.",
   icons: {
-    icon: '/favicon/favicon.png',
-    shortcut: '/favicon/favicon.png',
-    apple: '/favicon/favicon.png',
+    icon: [
+      { url: "/favicon/favicon.ico" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon/favicon.ico",
+    apple: "/favicon/apple-touch-icon.png",
   },
 };
 
@@ -36,7 +40,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9D87ETSED6"></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-9D87ETSED6"
+        ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
