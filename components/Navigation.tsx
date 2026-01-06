@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Terminal } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,7 +30,6 @@ const Navigation = () => {
       const scrollPosition = window.scrollY + 100;
       let currentSection = "";
 
-      // Check each section to find which one is currently in view
       for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         const element = document.getElementById(section);
@@ -37,7 +37,6 @@ const Navigation = () => {
           const offsetTop = element.offsetTop;
           const offsetHeight = element.offsetHeight;
 
-          // For the last section, also check if we're near the bottom of the page
           if (i === sections.length - 1) {
             const windowHeight = window.innerHeight;
             const documentHeight = document.documentElement.scrollHeight;
@@ -63,7 +62,7 @@ const Navigation = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial position
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -80,84 +79,106 @@ const Navigation = () => {
       className={cn(
         "fixed w-full z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/80 backdrop-blur-md shadow-sm"
+          ? "glass-effect neon-border border-b shadow-lg shadow-cyan-500/10"
           : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <a href="#" className="text-xl font-bold">
-              HLK
+          <motion.div 
+            className="flex-shrink-0"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <a href="#" className="flex items-center gap-2 text-xl font-bold">
+              <div className="w-10 h-10 rounded-lg glass-effect neon-glow flex items-center justify-center">
+                <Terminal className="w-5 h-5 text-cyan-400" />
+              </div>
+              <span className="neon-text text-cyan-400">HLK</span>
             </a>
-          </div>
+          </motion.div>
 
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-baseline space-x-1">
               {navItems.map((item) => {
                 const isActive = activeSection === item.href.substring(1);
                 return (
-                  <a
+                  <motion.a
                     key={item.name}
                     href={item.href}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     className={cn(
-                      "px-3 py-2 rounded-md text-sm font-medium transition-colors relative",
+                      "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative",
                       isActive
-                        ? "text-primary font-semibold"
-                        : "text-muted-foreground hover:text-primary"
+                        ? "text-cyan-400 neon-text glass-effect neon-border"
+                        : "text-cyan-100/60 hover:text-cyan-400 hover:glass-effect"
                     )}
                   >
                     {item.name}
                     {isActive && (
-                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full" />
+                      <motion.span 
+                        layoutId="activeNav"
+                        className="absolute inset-0 bg-cyan-500/10 rounded-lg -z-10"
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      />
                     )}
-                  </a>
+                  </motion.a>
                 );
               })}
             </div>
           </div>
 
           <div className="md:hidden">
-            <button
+            <motion.button
+              whileTap={{ scale: 0.9 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md hover:text-primary focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-lg glass-effect neon-border hover:neon-glow transition-all duration-300"
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-6 w-6 text-cyan-400" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 text-cyan-400" />
               )}
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background/80 backdrop-blur-md">
-            {navItems.map((item) => {
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden"
+        >
+          <div className="px-2 pt-2 pb-3 space-y-2 sm:px-3 glass-effect border-t neon-border">
+            {navItems.map((item, index) => {
               const isActive = activeSection === item.href.substring(1);
               return (
-                <a
+                <motion.a
                   key={item.name}
                   href={item.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
                   className={cn(
-                    "block px-3 py-2 rounded-md text-base font-medium transition-colors relative",
+                    "block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 relative",
                     isActive
-                      ? "text-primary font-semibold bg-primary/10"
-                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                      ? "text-cyan-400 neon-text glass-effect neon-border"
+                      : "text-cyan-100/60 hover:text-cyan-400 hover:glass-effect"
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                   {isActive && (
-                    <span className="absolute left-0 top-0 w-1 h-full bg-primary rounded-r-full" />
+                    <span className="absolute left-0 top-0 w-1 h-full bg-cyan-400 rounded-r-full shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
                   )}
-                </a>
+                </motion.a>
               );
             })}
           </div>
-        </div>
+        </motion.div>
       )}
     </nav>
   );
