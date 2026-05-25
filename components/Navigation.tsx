@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X, Terminal } from "lucide-react";
-import { motion } from "framer-motion";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,27 +11,14 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      setIsScrolled(window.scrollY > 20);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = [
-        "about",
-        "experience",
-        "skills",
-        "education",
-        "contact",
-      ];
+      const sections = ["about", "experience", "skills", "education", "contact"];
       const scrollPosition = window.scrollY + 100;
       let currentSection = "";
 
       for (let i = 0; i < sections.length; i++) {
-        const section = sections[i];
-        const element = document.getElementById(section);
+        const element = document.getElementById(sections[i]);
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetHeight = element.offsetHeight;
@@ -41,16 +27,12 @@ const Navigation = () => {
             const windowHeight = window.innerHeight;
             const documentHeight = document.documentElement.scrollHeight;
             const isNearBottom = window.scrollY + windowHeight >= documentHeight - 50;
-            
             if (scrollPosition >= offsetTop || isNearBottom) {
-              currentSection = section;
+              currentSection = sections[i];
             }
           } else {
-            if (
-              scrollPosition >= offsetTop &&
-              scrollPosition < offsetTop + offsetHeight
-            ) {
-              currentSection = section;
+            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+              currentSection = sections[i];
             }
           }
         }
@@ -71,116 +53,104 @@ const Navigation = () => {
     { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
     { name: "Education", href: "#education" },
-    { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav
+    <header
       className={cn(
-        "fixed w-full z-50 transition-all duration-300",
+        "fixed w-full z-50 transition-all duration-500",
         isScrolled
-          ? "glass-effect neon-border border-b shadow-lg shadow-cyan-500/10"
+          ? "bg-white/95 backdrop-blur-sm shadow-[0_1px_0_0_rgba(0,0,0,0.04)]"
           : "bg-transparent"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <motion.div 
-            className="flex-shrink-0"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+      <div className="max-w-[1100px] mx-auto px-6 sm:px-8">
+        <div className="flex items-center justify-between h-[60px]">
+          {/* Name / Logo */}
+          <a href="#" className="group flex items-center gap-2">
+            <span className="w-8 h-8 rounded-md bg-gray-900 flex items-center justify-center text-white text-xs font-bold">
+              H
+            </span>
+            <span className="text-sm font-semibold text-gray-900 hidden sm:inline">
+              Htun Linn Khant
+            </span>
+          </a>
+
+          {/* Desktop links */}
+          <div className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.substring(1);
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "text-[13px] font-medium tracking-wide uppercase transition-colors",
+                    isActive
+                      ? "text-gray-900"
+                      : "text-gray-400 hover:text-gray-700"
+                  )}
+                >
+                  {item.name}
+                </a>
+              );
+            })}
+          </div>
+
+          {/* CTA */}
+          <a
+            href="#contact"
+            className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-[13px] font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors"
           >
-            <a href="#" className="flex items-center gap-2 text-xl font-bold">
-              <div className="w-10 h-10 rounded-lg glass-effect neon-glow flex items-center justify-center">
-                <Terminal className="w-5 h-5 text-cyan-400" />
-              </div>
-              <span className="neon-text text-cyan-400">HLK</span>
-            </a>
-          </motion.div>
+            Contact
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </a>
 
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-1">
-              {navItems.map((item) => {
-                const isActive = activeSection === item.href.substring(1);
-                return (
-                  <motion.a
-                    key={item.name}
-                    href={item.href}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={cn(
-                      "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative",
-                      isActive
-                        ? "text-cyan-400 neon-text glass-effect neon-border"
-                        : "text-cyan-100/60 hover:text-cyan-400 hover:glass-effect"
-                    )}
-                  >
-                    {item.name}
-                    {isActive && (
-                      <motion.span 
-                        layoutId="activeNav"
-                        className="absolute inset-0 bg-cyan-500/10 rounded-lg -z-10"
-                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                      />
-                    )}
-                  </motion.a>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="md:hidden">
-            <motion.button
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-lg glass-effect neon-border hover:neon-glow transition-all duration-300"
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6 text-cyan-400" />
-              ) : (
-                <Menu className="h-6 w-6 text-cyan-400" />
-              )}
-            </motion.button>
-          </div>
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 -mr-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
 
+      {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden"
-        >
-          <div className="px-2 pt-2 pb-3 space-y-2 sm:px-3 glass-effect border-t neon-border">
-            {navItems.map((item, index) => {
+        <div className="md:hidden bg-white border-t border-gray-50">
+          <div className="px-6 py-5 space-y-1">
+            {navItems.map((item) => {
               const isActive = activeSection === item.href.substring(1);
               return (
-                <motion.a
+                <a
                   key={item.name}
                   href={item.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
                   className={cn(
-                    "block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 relative",
+                    "block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
                     isActive
-                      ? "text-cyan-400 neon-text glass-effect neon-border"
-                      : "text-cyan-100/60 hover:text-cyan-400 hover:glass-effect"
+                      ? "text-gray-900 bg-gray-50"
+                      : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
-                  {isActive && (
-                    <span className="absolute left-0 top-0 w-1 h-full bg-cyan-400 rounded-r-full shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
-                  )}
-                </motion.a>
+                </a>
               );
             })}
+            <a
+              href="#contact"
+              className="flex items-center justify-center gap-1.5 mt-3 px-4 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
           </div>
-        </motion.div>
+        </div>
       )}
-    </nav>
+    </header>
   );
 };
 

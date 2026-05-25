@@ -1,234 +1,131 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, TrendingUp, CheckCircle } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
 
 const experiences = [
-  // {
-  //   title: "Remote Full-Stack Developer",
-  //   company: "Myanmar Online Entrepreneur (MOE)",
-  //   location: "Remote",
-  //   period: "Jul 2025 – Present",
-  //   type: "Current",
-  //   achievements: [
-  //     "Designing and developing scalable web platforms for e-commerce and digital services using Laravel, React, and Node.js",
-  //     "Integrating secure payment gateways and RESTful APIs to enhance transaction reliability",
-  //     "Collaborating remotely with cross-functional teams to deliver new features and system improvements on schedule",
-  //   ],
-  //   technologies: [
-  //     "Laravel",
-  //     "React",
-  //     "Node.js",
-  //     "RESTful APIs",
-  //     "Payment Gateways",
-  //   ],
-  //   color: "bg-green-500/10 text-green-600 dark:text-green-400",
-  // },
+  {
+    title: "Full-Stack Developer",
+    company: "MOT",
+    location: "Remote",
+    period: "Aug 2025 – Present",
+    current: true,
+    achievements: [
+      "Designing and developing scalable web platforms using modern full-stack technologies",
+      "Building and integrating RESTful APIs to support business-critical workflows",
+      "Collaborating with cross-functional teams to deliver features on schedule",
+    ],
+    technologies: ["React", "Next.js", "Node.js", "Laravel", "PostgreSQL", "Docker"],
+  },
   {
     title: "Remote Backend Developer",
     company: "Startrick Sdn Bhd",
     location: "Malaysia",
     period: "Jun 2024 – Apr 2025",
-    type: "Previous",
+    current: false,
     achievements: [
       "Developed and optimized backend systems and APIs in Python, Node.js, and PHP, reducing API latency by 35%",
       "Enhanced MySQL/PostgreSQL performance to support 50K+ daily requests with zero downtime",
-      "Implemented Docker-based CI/CD pipelines, cutting deployment time from hours to under 15 minutes and speeding feature delivery by 20%",
+      "Implemented Docker-based CI/CD pipelines, cutting deployment time from hours to under 15 minutes",
     ],
-    technologies: [
-      "Python",
-      "Node.js",
-      "PHP",
-      "MySQL",
-      "PostgreSQL",
-      "Docker",
-      "CI/CD",
-    ],
-    color: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
+    technologies: ["Python", "Node.js", "PHP", "MySQL", "PostgreSQL", "Docker", "CI/CD"],
   },
   {
     title: "System Developer",
     company: "MPT-KSGM",
     location: "Myanmar",
     period: "Aug 2023 – Apr 2024",
-    type: "Previous",
+    current: false,
     achievements: [
-      "Built responsive web applications using Django, HTML, CSS, JavaScript, PHP, and SQL, reducing page load time by 25%",
+      "Built responsive web applications using Django, PHP, and SQL, reducing page load time by 25%",
       "Integrated and optimized RESTful APIs, boosting data processing efficiency by 15%",
       "Coordinated with cross-functional teams to deliver projects 10% ahead of schedule",
     ],
-    technologies: [
-      "Django",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "PHP",
-      "SQL",
-      "RESTful APIs",
-    ],
-    color: "bg-purple-500/10 text-purple-600 dark:text-purple-400",
+    technologies: ["Django", "JavaScript", "PHP", "SQL", "RESTful APIs"],
   },
   {
     title: "Web Developer",
     company: "Royal Express",
     location: "Myanmar",
     period: "Jul 2022 – Aug 2023",
-    type: "Previous",
+    current: false,
     achievements: [
-      "Developed and maintained websites with Laravel, Spatie, HTML, CSS, JavaScript, and SQL",
+      "Developed and maintained websites with Laravel, HTML, CSS, JavaScript, and SQL",
       "Built secure authentication systems, eliminating unauthorized access attempts",
       "Enhanced mobile responsiveness, increasing mobile engagement by 35%",
     ],
-    technologies: [
-      "Laravel",
-      "Spatie",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "SQL",
-      "Authentication",
-    ],
-    color: "bg-orange-500/10 text-orange-600 dark:text-orange-400",
+    technologies: ["Laravel", "JavaScript", "SQL", "Authentication", "Spatie"],
   },
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-12 relative">
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+    <section id="experience" className="py-10">
+      <div className="mb-10">
+        <h2 className="text-2xl font-semibold text-gray-900">Experience</h2>
+        <div className="mt-1 w-10 h-0.5 bg-gray-900 rounded-full" />
+        <p className="mt-3 text-gray-500 text-sm">
+          Over 3 years of progressive experience in full-stack development, backend optimization, and system architecture.
+        </p>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="space-y-6"
-      >
-        {/* Header */}
-        <div className="text-center space-y-2">
-          <Badge variant="secondary" className="px-3 py-1 text-xs font-medium">
-            Professional Journey
-          </Badge>
-          <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Work Experience
-          </h2>
-          <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
-            Over 3 years of progressive experience in full-stack development,
-            backend optimization, and system architecture
-          </p>
-        </div>
+      <div className="relative">
+        {/* Timeline line */}
+        <div className="absolute left-[7px] top-3 bottom-3 w-px bg-gray-200 hidden sm:block" />
 
-        {/* Timeline */}
-        <div className="max-w-6xl mx-auto">
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent"></div>
+        <div className="space-y-5">
+          {experiences.map((exp, index) => (
+            <div key={index} className="relative sm:pl-8">
+              {/* Timeline dot */}
+              <div className={`absolute left-0 top-3 w-[15px] h-[15px] rounded-full border-[3px] ${exp.current ? "border-gray-900 bg-gray-900" : "border-gray-300 bg-white"} hidden sm:block`} />
 
-            <div className="space-y-6">
-              {experiences.map((exp, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="relative"
-                >
-                  {/* Timeline dot */}
-                  <div
-                    className={`absolute left-2.5 md:left-6.5 w-3 h-3 rounded-full border-2 border-background ${
-                      exp.type === "Current" ? "bg-green-500" : "bg-primary"
-                    } shadow-lg`}
-                  ></div>
-
-                  {/* Content card */}
-                  <div className="ml-8 md:ml-16">
-                    <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 group border-l-4 border-l-transparent hover:border-l-primary">
-                      <CardHeader className="pb-3">
-                        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-1">
-                              <CardTitle className="text-lg font-bold group-hover:text-primary transition-colors">
-                                {exp.title}
-                              </CardTitle>
-                              {exp.type === "Current" && (
-                                <Badge className="bg-green-500/10 text-green-600 border-green-200 dark:text-green-400 text-xs">
-                                  Current
-                                </Badge>
-                              )}
-                            </div>
-                            <div className="space-y-1">
-                              <p className="text-base font-semibold text-muted-foreground">
-                                {exp.company}
-                              </p>
-                              <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                                <div className="flex items-center gap-1">
-                                  <MapPin className="h-3 w-3" />
-                                  {exp.location}
-                                </div>
-                                <div className="flex items-center gap-1">
-                                  <Calendar className="h-3 w-3" />
-                                  {exp.period}
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </CardHeader>
-
-                      <CardContent className="space-y-3">
-                        {/* Achievements */}
-                        <div>
-                          <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
-                            <TrendingUp className="h-3 w-3 text-primary" />
-                            Key Achievements
-                          </h4>
-                          <ul className="space-y-1.5">
-                            {exp.achievements.map((achievement, achIndex) => (
-                              <li
-                                key={achIndex}
-                                className="flex items-start gap-2 text-xs text-muted-foreground"
-                              >
-                                <CheckCircle className="h-3 w-3 text-green-500 mt-0.5 flex-shrink-0" />
-                                <span className="leading-relaxed">
-                                  {achievement}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Technologies */}
-                        <div>
-                          <h4 className="text-sm font-semibold mb-2">
-                            Technologies Used
-                          </h4>
-                          <div className="flex flex-wrap gap-1.5">
-                            {exp.technologies.map((tech, techIndex) => (
-                              <Badge
-                                key={techIndex}
-                                variant="outline"
-                                className="text-xs px-2 py-0.5 hover:bg-primary/10 transition-colors"
-                              >
-                                {tech}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
+              <div className="p-6 rounded-2xl border border-gray-100 bg-white hover:border-gray-200 hover:shadow-md transition-all duration-300">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg font-semibold text-gray-900">{exp.title}</h3>
+                      {exp.current && (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 text-xs font-medium text-gray-700 bg-gray-100 border border-gray-200 rounded-full">
+                          <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                          Current
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-gray-900 font-medium text-sm">{exp.company}</p>
                   </div>
-                </motion.div>
-              ))}
+                  <div className="flex items-center gap-4 text-sm text-gray-400 flex-shrink-0">
+                    <span className="flex items-center gap-1">
+                      <MapPin className="h-3.5 w-3.5" />
+                      {exp.location}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Calendar className="h-3.5 w-3.5" />
+                      {exp.period}
+                    </span>
+                  </div>
+                </div>
+
+                <ul className="space-y-2 mb-4">
+                  {exp.achievements.map((achievement, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-sm text-gray-600">
+                      <span className="mt-2 w-1 h-1 bg-gray-900 rounded-full flex-shrink-0" />
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-2">
+                  {exp.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2.5 py-1 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

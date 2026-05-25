@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
+import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
@@ -10,17 +9,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Htun Linn Khant - Full Stack Developer",
+  title: "Htun Linn Khant — Full Stack Developer",
   description:
-    "Portfolio of Htun Linn Khant, a Full Stack Developer specializing in web development.",
+    "Full Stack Developer with 3+ years of experience building high-performance web applications, APIs, and scalable systems.",
   icons: {
     icon: [
       { url: "/favicon/favicon.ico" },
@@ -37,9 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth">
       <head>
-        {/* Google Analytics */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-9D87ETSED6"
@@ -55,15 +46,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${poppins.variable} font-sans`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+      <body className={`${inter.variable} font-sans`}>
+        {children}
+        <SpeedInsights />
       </body>
     </html>
   );
