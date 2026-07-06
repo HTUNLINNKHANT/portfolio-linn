@@ -21,7 +21,7 @@ const contactLinks = [
   },
   {
     label: "WhatsApp",
-    value: "+60 14-299 5207",
+    value: "Chat on WhatsApp",
     href: "https://wa.me/60142995207",
     icon: <Phone className="h-4 w-4 text-gray-900" />,
   },
