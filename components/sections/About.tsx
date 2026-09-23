@@ -1,25 +1,25 @@
-import { Code2, Globe, Server, Wifi } from "lucide-react";
+import { Code2, Globe, Server, Layers } from "lucide-react";
 
 const highlights = [
   {
-    icon: <Code2 className="h-5 w-5 text-gray-900" />,
-    title: "Full Stack Development",
-    description: "End-to-end web application development with modern frameworks",
+    icon: <Server className="h-5 w-5 text-gray-900" />,
+    title: "Backend Engineering",
+    description: "Scalable APIs, business logic, database systems, and integrations",
   },
   {
-    icon: <Server className="h-5 w-5 text-gray-900" />,
-    title: "Backend Optimization",
-    description: "High-performance APIs and database systems at scale",
+    icon: <Code2 className="h-5 w-5 text-gray-900" />,
+    title: "Full-Stack Development",
+    description: "Production web applications using modern frontend and backend technologies",
+  },
+  {
+    icon: <Layers className="h-5 w-5 text-gray-900" />,
+    title: "System Architecture",
+    description: "Reliable application architecture designed for growth and maintainability",
   },
   {
     icon: <Globe className="h-5 w-5 text-gray-900" />,
-    title: "Scalable Systems",
-    description: "Architecture designed for growth and reliability",
-  },
-  {
-    icon: <Wifi className="h-5 w-5 text-gray-900" />,
-    title: "Remote Collaboration",
-    description: "Experienced in distributed teams and async workflows",
+    title: "DevOps & Delivery",
+    description: "CI/CD, Docker, deployment automation, and production operations",
   },
 ];
 
@@ -34,29 +34,36 @@ export default function About() {
       <div className="grid lg:grid-cols-5 gap-12">
         <div className="lg:col-span-3">
           <p className="text-gray-600 leading-relaxed">
-            I am a results-driven Full-Stack Developer with over three years of
-            experience designing, building, and optimizing web applications,
-            APIs, and backend systems. Skilled in PHP, Python, Node.js, Laravel,
-            Django, and modern frontend technologies, I specialize in creating
-            scalable, secure, and high-performance solutions.
+            I&apos;m Htun Linn Khant, a Backend and Full-Stack Developer from
+            Myanmar, currently based in Malaysia. With more than four years of
+            professional experience, I specialise in building backend systems,
+            production APIs, and full-stack web applications that are designed
+            to scale.
           </p>
           <p className="mt-4 text-gray-600 leading-relaxed">
-            My work has reduced API response times by up to 35%, scaled platforms
-            to handle 50,000+ daily requests, and streamlined deployments with
-            Docker and CI/CD pipelines. I thrive in collaborative, fast-paced
-            environments where problem-solving, clean code, and business impact
-            go hand in hand.
+            My core stack includes Node.js, NestJS, PostgreSQL, and Next.js on
+            the backend and full-stack side, alongside Laravel and Python/Django
+            for server-side work. I pay close attention to database design,
+            query optimisation, and system architecture. On the delivery side I
+            work with Docker, CI/CD pipelines, and cloud deployments to keep
+            production systems reliable and maintainable.
+          </p>
+          <p className="mt-4 text-gray-600 leading-relaxed">
+            My work has reduced API response times by up to 35%, scaled
+            platforms to handle 50,000+ daily requests, and streamlined
+            deployments through automation. I work well in collaborative,
+            distributed teams where clean code and business impact matter.
           </p>
         </div>
 
         <div className="lg:col-span-2 space-y-3">
           <div className="p-4 rounded-xl border border-gray-100 bg-gray-50/50">
             <div className="text-sm text-gray-500">Location</div>
-            <div className="font-medium text-gray-900">Malaysia — Working Globally</div>
+            <div className="font-medium text-gray-900">From Myanmar · Based in Malaysia</div>
           </div>
           <div className="p-4 rounded-xl border border-gray-100 bg-gray-50/50">
             <div className="text-sm text-gray-500">Experience</div>
-            <div className="font-medium text-gray-900">3+ Years in Full Stack Development</div>
+            <div className="font-medium text-gray-900">4+ Years in Backend &amp; Full-Stack Development</div>
           </div>
           <div className="p-4 rounded-xl border border-gray-100 bg-gray-50/50">
             <div className="text-sm text-gray-500">Status</div>

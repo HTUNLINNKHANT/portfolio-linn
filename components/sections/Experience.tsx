@@ -62,7 +62,7 @@ export default function Experience() {
         <h2 className="text-2xl font-semibold text-gray-900">Experience</h2>
         <div className="mt-1 w-10 h-0.5 bg-gray-900 rounded-full" />
         <p className="mt-3 text-gray-500 text-sm">
-          Over 3 years of progressive experience in full-stack development, backend optimization, and system architecture.
+          Over 4 years of progressive experience in full-stack development, backend optimization, and system architecture.
         </p>
       </div>
 

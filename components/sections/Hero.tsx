@@ -1,7 +1,7 @@
 import { ArrowRight, Mail, MapPin } from "lucide-react";
 
 const metrics = [
-  { value: "3+", label: "Years Experience" },
+  { value: "4+", label: "Years Experience" },
   { value: "50K+", label: "Daily Requests" },
   { value: "35%", label: "API Latency Reduced" },
 ];
@@ -22,20 +22,21 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold text-gray-900 leading-[1.15] tracking-tight">
             Hi, I&apos;m Htun Linn Khant.
             <br />
-            <span className="text-gray-900">Full Stack Developer.</span>
+            <span className="text-gray-900">Backend &amp; Full-Stack Developer.</span>
           </h1>
 
           {/* Description */}
           <p className="mt-5 text-base text-gray-500 leading-relaxed max-w-[520px]">
-            I build high-performance web applications and scalable backend
-            systems. Specialized in API optimization, DevOps, and delivering
-            production-ready solutions that handle real-world traffic.
+            I build scalable backend systems, production APIs, and modern
+            full-stack applications. My work focuses on API architecture,
+            database systems, DevOps, performance optimization, and reliable
+            production deployments.
           </p>
 
           {/* Location */}
           <div className="mt-4 flex items-center gap-1.5 text-sm text-gray-400">
             <MapPin className="h-3.5 w-3.5" />
-            Based in Malaysia · Working globally
+            Developer from Myanmar · Based in Malaysia · Working globally
           </div>
 
           {/* CTA Buttons */}
